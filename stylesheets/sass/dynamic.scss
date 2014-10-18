@@ -1,0 +1,258 @@
+@import "normalize.scss";
+@import "variables.scss";
+@import "mixins.scss";
+
+//Borders and padding are drawn inside the set width of your content. The margin is drawn outside
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+//Clearfix
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+//Styles
+.container {
+  margin: 0 auto;
+  max-width: $width-large;
+  width: 90%;
+}
+section, header, footer {
+  width: 100%;
+  padding: 20px 0 20px 0;
+}
+
+// custom elements
+img.responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.col {
+  width: 100%;
+  float: left;
+}
+//full
+.col.frac-1 { width: 100% }
+.col.frac-1-1 { width: 100% }
+//halves
+.col.frac-1-2 { width: 50% }
+//thirds
+.col.frac-1-3 { width: 33.333% }
+.col.frac-2-3 { width: 66.666% }
+//4ths
+.col.frac-1-4 { width: 25% }
+.col.frac-2-4 { @extend .col.frac-1-2; }
+.col.frac-3-4 { width: 75% }
+//fifths
+.col.frac-1-5 { width: 20% }
+.col.frac-2-5 { width: 40% }
+.col.frac-3-5 { width: 60% }
+.col.frac-4-5 { width: 80% }
+//sixths
+.col.frac-1-6 { width: 16.666% }
+.col.frac-2-6 { @extend .col.frac-1-3; }
+.col.frac-3-6 { @extend .col.frac-1-2; }
+.col.frac-4-6 { @extend .col.frac-2-3; }
+.col.frac-5-6 { width: 83.333% }
+//sevenths
+.col.frac-1-7 { width: 14.285% }
+.col.frac-2-7 { width: 28.57% }
+.col.frac-3-7 { width: 42.855% }
+.col.frac-4-7 { width: 57.14% }
+.col.frac-5-7 { width: 71.425% }
+.col.frac-6-7 { width: 85.71% }
+//eigths
+.col.frac-1-8 { width: 12.5% }
+.col.frac-2-8 { width: 25% }
+.col.frac-3-8 { width: 37.5% }
+.col.frac-4-8 { @extend .col.frac-1-2; }
+.col.frac-5-8 { width: 62.5% }
+.col.frac-6-8 { @extend .col.frac-3-4; }
+.col.frac-7-8 { width: 87.5% }
+//ninths
+.col.frac-1-9 { width: 11.111% }
+.col.frac-2-9 { width: 22.222% }
+.col.frac-3-9 { @extend .col.frac-1-3; }
+.col.frac-4-9 { width: 44.444% }
+.col.frac-5-9 { width: 55.555% }
+.col.frac-6-9 { @extend .col.frac-2-3; }
+.col.frac-7-9 { width: 77.777% }
+.col.frac-8-9 { width: 88.888% }
+//tenths
+.col.frac-1-10 { width: 10% }
+.col.frac-2-10 { @extend .col.frac-1-5; }
+.col.frac-3-10 { width: 30% }
+.col.frac-4-10 { @extend .col.frac-2-5;}
+.col.frac-5-10 { @extend .col.frac-1-2; }
+.col.frac-6-10 { @extend .col.frac-3-5; }
+.col.frac-7-10 { width: 70% }
+.col.frac-8-10 { @extend .col.frac-4-5; }
+.col.frac-9-10 { width: 90% }
+//elevenths
+.col.frac-1-11 { width: 9.09% }
+.col.frac-2-11 { width: 18.18% }
+.col.frac-3-11 { width: 27.27% }
+.col.frac-4-11 { width: 36.36% }
+.col.frac-5-11 { width: 45.45% }
+.col.frac-6-11 { width: 54.54% }
+.col.frac-7-11 { width: 63.63% }
+.col.frac-8-11 { width: 72.72% }
+.col.frac-9-11 { width: 81.81% }
+.col.frac-10-11 { width: 90.9% }
+//twelve
+.col.frac-1-12 { width: 8.333% }
+.col.frac-2-12 { width: 16.666% }
+.col.frac-3-12 { @extend .col.frac-1-4 }
+.col.frac-4-12 { @extend .col.frac-1-3; }
+.col.frac-5-12 { width: 41.666% }
+.col.frac-6-12 { @extend .col.frac-1-2; }
+.col.frac-7-12 { width: 58.333% }
+.col.frac-8-12 { @extend .col.frac-2-3; }
+.col.frac-9-12 { @extend .col.frac-3-4; }
+.col.frac-10-12 { width: 83.333% }
+.col.frac-11-12 { width: 91.666% }
+
+//verticle re-ordering
+.col.flow-opposite { float: right }
+
+// columns in percentages
+.col.perc-1 { width: 1% }
+.col.perc-2 { width: 2% }
+.col.perc-3 { width: 3% }
+.col.perc-4 { width: 4% }
+.col.perc-5 { width: 5% }
+.col.perc-6 { width: 6% }
+.col.perc-7 { width: 7% }
+.col.perc-8 { width: 8% }
+.col.perc-9 { width: 9% }
+.col.perc-10 { width: 10% }
+.col.perc-11 { width: 11% }
+.col.perc-12 { width: 12% }
+.col.perc-13 { width: 13% }
+.col.perc-14 { width: 14% }
+.col.perc-15 { width: 15% }
+.col.perc-16 { width: 16% }
+.col.perc-17 { width: 17% }
+.col.perc-18 { width: 18% }
+.col.perc-19 { width: 19% }
+.col.perc-20 { width: 20% }
+.col.perc-21 { width: 21% }
+.col.perc-22 { width: 22% }
+.col.perc-23 { width: 23% }
+.col.perc-24 { width: 24% }
+.col.perc-25 { width: 25% }
+.col.perc-26 { width: 26% }
+.col.perc-27 { width: 27% }
+.col.perc-28 { width: 28% }
+.col.perc-29 { width: 29% }
+.col.perc-30 { width: 30% }
+.col.perc-31 { width: 31% }
+.col.perc-32 { width: 32% }
+.col.perc-33 { width: 33% }
+.col.perc-34 { width: 34% }
+.col.perc-35 { width: 35% }
+.col.perc-36 { width: 36% }
+.col.perc-37 { width: 37% }
+.col.perc-38 { width: 38% }
+.col.perc-39 { width: 39% }
+.col.perc-40 { width: 40% }
+.col.perc-41 { width: 41% }
+.col.perc-42 { width: 42% }
+.col.perc-43 { width: 43% }
+.col.perc-44 { width: 44% }
+.col.perc-45 { width: 45% }
+.col.perc-46 { width: 46% }
+.col.perc-47 { width: 47% }
+.col.perc-48 { width: 48% }
+.col.perc-49 { width: 49% }
+.col.perc-50 { width: 50% }
+.col.perc-51 { width: 51% }
+.col.perc-52 { width: 52% }
+.col.perc-53 { width: 53% }
+.col.perc-54 { width: 54% }
+.col.perc-55 { width: 55% }
+.col.perc-56 { width: 56% }
+.col.perc-57 { width: 57% }
+.col.perc-58 { width: 58% }
+.col.perc-59 { width: 59% }
+.col.perc-60 { width: 60% }
+.col.perc-61 { width: 61% }
+.col.perc-62 { width: 62% }
+.col.perc-63 { width: 63% }
+.col.perc-64 { width: 64% }
+.col.perc-65 { width: 65% }
+.col.perc-66 { width: 66% }
+.col.perc-67 { width: 67% }
+.col.perc-68 { width: 68% }
+.col.perc-69 { width: 69% }
+.col.perc-70 { width: 70% }
+.col.perc-71 { width: 71% }
+.col.perc-72 { width: 72% }
+.col.perc-73 { width: 73% }
+.col.perc-74 { width: 74% }
+.col.perc-75 { width: 75% }
+.col.perc-76 { width: 76% }
+.col.perc-77 { width: 77% }
+.col.perc-78 { width: 78% }
+.col.perc-79 { width: 79% }
+.col.perc-80 { width: 80% }
+.col.perc-81 { width: 81% }
+.col.perc-82 { width: 82% }
+.col.perc-83 { width: 83% }
+.col.perc-84 { width: 84% }
+.col.perc-85 { width: 85% }
+.col.perc-86 { width: 86% }
+.col.perc-87 { width: 87% }
+.col.perc-88 { width: 88% }
+.col.perc-89 { width: 89% }
+.col.perc-90 { width: 90% }
+.col.perc-91 { width: 91% }
+.col.perc-92 { width: 92% }
+.col.perc-93 { width: 93% }
+.col.perc-94 { width: 94% }
+.col.perc-95 { width: 95% }
+.col.perc-96 { width: 96% }
+.col.perc-97 { width: 97% }
+.col.perc-98 { width: 98% }
+.col.perc-99 { width: 99% }
+.col.perc-100 { width: 100% }
+
+// row collapse
+@include responsiveMax(xsmall) {
+  .row.collapse-xsmall > .col {
+    width: 100%;
+  }
+}
+
+@include responsiveMax(small) {
+  .row.collapse-small > .col {
+    width: 100%;
+  }
+}
+
+@include responsiveMax(medium) {
+  .row.collapse-medium > .col {
+    width: 100%;
+  }
+}
+
+@include responsiveMax(large) {
+  .row.collapse-large > .col {
+    width: 100%;
+  }
+}
