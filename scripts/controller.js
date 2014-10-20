@@ -53,7 +53,11 @@
         btn.addEventListener('click', function(e) {
           var ans = eval(statement);
           displayValue.innerHTML = ans;
+
+          // reset stuff
           resetOperators();
+          statement = "";
+          newOperand = true;
         });
       }
     });
